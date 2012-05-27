@@ -1,0 +1,38 @@
+<head>
+    <title>Play gomoku</title>
+</head>
+
+<body>
+    {{> page}}
+</body>
+
+<template name="page">
+    {{#if game_selected}}
+        {{> board}}
+    {{else}}
+        <div class="games">
+            <h2>Select a game to start</h2>
+            <ul>
+                {{#each games}}
+                    <li><a href="#">Game {{number}}</a></li>
+                {{/each}}
+            </ul>
+        </div>
+        <a href="#" class="newgame">New game</a>
+    {{/if}}
+</template>
+
+<template name="board">
+    {{#with game}}
+        <p>Game: {{number}} - <a href="#" class="leave">Leave game</a></p>
+        <table>
+            {{#each board}}
+                <tr>
+                    {{#each this}}
+                        <td>{{#if this}}{{ this }}{{/if}}</td>
+                    {{/each}}
+                </tr>
+            {{/each}}
+        </table>
+    {{/with}}
+</template>
