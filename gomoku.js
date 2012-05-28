@@ -33,7 +33,7 @@ if (Meteor.is_client){
         },
         'click .newgame': function(){
             var latest = Games.findOne({}, {sort: {number: -1}});
-            var number = (latest)? latest.number: 1;
+            var number = (latest)? latest.number+1: 1;
             var game_id = Games.insert({
                 number: number,
                 board: empty_board(),
