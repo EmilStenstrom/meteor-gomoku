@@ -23,10 +23,10 @@ if (Meteor.is_server){
 if (Meteor.is_client){
     // Page
     Template.page.game_selected = function(){
-        return Session.get("game_selected") && Games.find({}).count();
+        return Session.get("game_selected") && Games.find().count();
     }
     Template.page.games = function(){
-        return Games.find({});
+        return Games.find();
     }
     Template.page.events = {
         'click .games a': function(){
