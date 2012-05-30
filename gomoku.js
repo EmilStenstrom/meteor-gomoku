@@ -45,7 +45,6 @@ if (Meteor.is_client){
 
     // Board
     Template.board.game = function() {
-        Meteor.flush();
         return Games.findOne(Session.get("game_selected"));
     };
     Template.board.events = {
