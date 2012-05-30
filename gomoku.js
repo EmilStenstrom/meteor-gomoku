@@ -14,7 +14,8 @@ if (Meteor.is_server){
             Games.insert({
                 number: 1,
                 board: empty_board(),
-                turn: true})
+                turn: true
+            })
         }
     });
 }
